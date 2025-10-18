@@ -1,14 +1,19 @@
 START
-DECLARE n,i,isprime
-  FOR n:arrow-left:TRUE
-  FOR i:arrow-left:2 to n-1
-   IF n MOD i = 0 THEN
-   SET isprime:arrow-left:FALSE
-  EXIT FOR
- END IF
+DECLARE n, i, isprime
+
+FOR n ← 2 TO 100
+    SET isprime ← TRUE
+
+    FOR i ← 2 TO n - 1
+        IF n MOD i = 0 THEN
+            SET isprime ← FALSE
+            EXIT FOR
+        END IF
+    END FOR
+
+    IF isprime = TRUE THEN
+        OUTPUT n
+    END IF
 END FOR
-  IF isprime:TRUE THEN
- OUTPUT n
-END IF
-END FOR
+
 END
